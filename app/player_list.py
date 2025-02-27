@@ -29,6 +29,10 @@ class PlayerList:
             self.__head.prev = new_node     #Point current head's prev to new node
             self.__head = new_node          #Update the head to the new node
 
+    def get_tail_player(self):
+        """Return the player at the tail of the list"""
+        return self.__tail.data if self.__tail else None
+
     def insert_at_tail(self, player):
         """Insert a player at the tail of the list"""
         new_node = PlayerNode(player)

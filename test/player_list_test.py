@@ -25,6 +25,16 @@ class TestPlayerList(unittest.TestCase):
         """Test inserting a player node when list is empty"""
         self.player_list.insert_at_head(Player("123", "Ten"))
 
+    def test_get_tail_player_when_empty(self):
+        """Test getting the tail player when list is empty"""
+        self.assertIsNone(self.player_list.get_tail_player())
+
+    def test_get_tail_player_when_not_empty(self):
+        """Test getting the tail player when list is not empty"""
+        player = Player("123", "Ten")
+        self.player_list.insert_at_head(player)
+        self.assertEqual(self.player_list.get_tail_player(), player)
+
     def test_insert_at_tail(self):
         """Test inserting a player node at the tail of the list"""
         player = Player("123", "Ten")
