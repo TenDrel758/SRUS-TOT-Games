@@ -1,12 +1,8 @@
 class PlayerNode:
     """A node for a double linked list holding player instances."""
 
-    def __init__(self):
-        self.__player = None
-        self.__next = None
-        self.__prev = None
-
-    def init(self, player):
+    def __init__(self, player):
+        """Initialize a player node with a player instance."""
         self.__player = player
         self.__next = None
         self.__prev = None
@@ -21,29 +17,29 @@ class PlayerNode:
         """Get next node."""
         return self.__next
 
+    @next.setter
+    def next(self, next_node):
+        """Set next node."""
+        self.__next = next_node
+
     @property
     def prev(self):
         """Get previous node."""
         return self.__prev
 
-    @next.setter
-    def next(self, node):
-        """Set next node."""
-        self.__next = node
-
     @prev.setter
-    def prev(self, node):
+    def prev(self, prev_node):
         """Set previous node."""
-        self.__prev = node
+        self.__prev = prev_node
 
     @property
     def key(self):
-        """return player uid as key"""
-        return self.__player.__uid        #assume player has uid property
+        """Return player uid as key"""
+        return self.__player.uid        #assume player has uid property
 
     @property
     def __str__(self):
-        """return string representation of player node."""
+        """Return string representation of player node."""
         return f"PlayerNode(uid={self.key}, player_name={self.player.name})"
 
     @player.setter
