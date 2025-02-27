@@ -5,9 +5,9 @@ from app.player_node import PlayerNode
 class PlayerList:
     """A class to represent a doubly linked list of players."""
 
-    def __init__(self):
+    def __init__(self, __head=None):
         """Private var to point to the head of the list"""
-        self.__head = None
+        self.__head = __head
 
     def is_empty(self) -> bool:
         """Returns True if the list is empty, False otherwise"""

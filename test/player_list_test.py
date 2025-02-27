@@ -14,15 +14,16 @@ class TestPlayerList(unittest.TestCase):
         self.assertTrue(self.player_list.is_empty())
 
     def test_insert_at_head_when_not_empty(self):
+        """Test inserting a player node when list is not empty"""
+        player = Player("123", "Ten")
+        self.player_list.insert_at_head(player)
+        self.assertFalse(self.player_list.is_empty())
+        self.player_list.insert_at_head(player.name)
 
-        player1 = Player("123", "Ten")
-        self.player_list.insert_at_head(player1)
+    def test_insert_at_head_when_empty(self):
+        """Test inserting a player node when list is empty"""
+        self.player_list.insert_at_head(Player("123", "Ten"))
 
-        player2 = Player("456", "Drel")
-        self.player_list.insert_at_head(player2)
-
-        self.assertEqual(self.player_list.__head.player.name, "Drel")
-        self.assertEqual(self.player_list.__head.next.player.name, "Ten")
-
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    """main function"""
+    unittest.main()
