@@ -31,7 +31,7 @@ class PlayerList:
 
     def get_tail_player(self):
         """Return the player at the tail of the list"""
-        return self.__tail.data if self.__tail else None
+        return self.__tail.player if self.__tail else None
 
     def insert_at_tail(self, player):
         """Insert a player at the tail of the list"""
