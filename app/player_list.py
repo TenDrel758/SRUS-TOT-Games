@@ -47,3 +47,34 @@ class PlayerList:
             self.__tail.next = new_node     #Link the current tail's next to the new node
             self.__tail = new_node          #Update the tail to new node
 
+    def delete_from_head(self):
+        """Delete the player at the head of the list"""
+        if self.is_empty():
+            return None                     #Nothing to delete
+
+        removed_node = self.__head          #Keep reference to node to remove
+
+        if self.__head == self.__tail:      #Only one node in the list
+            self.__head = None
+            self.__tail = None
+        else:
+            self.__head = self.__head.next  #Move Head to the next node
+            self.__head.prev = None         #Remove reference from the new head's prev node
+
+        return removed_node.player          #Return the deleted player
+
+    def delete_from_tail(self):
+        """Delete the player at the tail of the list"""
+        if self.is_empty():
+            return None                     #Nothing to delete
+
+        removed_node = self.__tail          #Keep reference to the node to remove
+
+        if self.__head == self.__tail:      #Only one node in the list
+            self.__head = None
+            self.__tail = None
+        else:
+            self.__tail = self.__tail.prev  #Move tail to the prev node
+            self.__tail.next = None         #Remove reference from the new tail's next node
+
+        return removed_node.player          #Return the deleted player

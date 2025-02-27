@@ -3,6 +3,7 @@ import unittest
 from app.player_list import PlayerList
 from app.player import Player
 
+
 class TestPlayerList(unittest.TestCase):
     """Testing the PlayerList class"""
 
@@ -42,6 +43,21 @@ class TestPlayerList(unittest.TestCase):
     def test_insert_at_tail_when_not_empty(self):
         """Test inserting a player node when list is not empty"""
         self.player_list.insert_at_head(Player("123", "Ten"))
+
+    def test_delete_from_head(self):
+        players = [Player("123", "Ten"), Player("456", "Jane")]
+        self.player_list.insert_at_head(players[0])
+
+        deleted_player = self.player_list.delete_from_head()
+        self.assertEqual(deleted_player, players[0])  #check deleted player
+
+    def test_delete_from_tail(self):
+        players = [Player("123", "Ten"), Player("456", "Jane")]
+        self.player_list.insert_at_tail(players[0])
+
+        deleted_player = self.player_list.delete_from_tail()
+        self.assertEqual(deleted_player, players[0])  #Check deleted player
+
 
 if __name__ == '__main__':
     """main function"""
