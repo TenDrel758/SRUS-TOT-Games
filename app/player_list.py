@@ -78,3 +78,40 @@ class PlayerList:
             self.__tail.next = None         #Remove reference from the new tail's next node
 
         return removed_node.player          #Return the deleted player
+
+    def delete_by_key(self, key):
+
+        current = self.__head
+
+        while current:
+            if current.player.uid == key:           # Assume Player class has 'key' attribute
+                if current == self.__head:         # If it is the head
+                    self.delete_from_head()
+                elif current == self.__tail:       #If it is the tail
+                    self.delete_from_tail()
+                else:                              #If it is the middle
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+                    return current.player          #Return the deleted player
+
+            current = current.next
+
+        return None                                #If not found
+
+    def display(self, forward=True):
+        """Display the players in the list from head -> tail or tail -> head."""
+        if self.is_empty():
+            print("The list is empty.")
+            return
+
+        if forward:
+            current = self.__head
+            direction = "Head -> Tail"
+        else:
+            current = self.__tail
+            direction = "Tail -> Head"
+
+        print(f"Players in the {direction}:")
+        while current:
+            print(f"Player: {current.player.name}, UID: {current.player.uid}")
+            current = current.next if forward else current.prev
