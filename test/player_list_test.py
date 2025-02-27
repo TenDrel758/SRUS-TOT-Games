@@ -35,10 +35,13 @@ class TestPlayerList(unittest.TestCase):
         self.player_list.insert_at_head(player)
         self.assertEqual(self.player_list.get_tail_player(), player)
 
-    def test_insert_at_tail(self):
-        """Test inserting a player node at the tail of the list"""
-        player = Player("123", "Ten")
-        self.player_list.insert_at_tail(player)
+    def test_insert_at_tail_when_empty(self):
+        """Test inserting a player node when list is empty"""
+        self.player_list.insert_at_tail(Player("123", "Ten"))
+
+    def test_insert_at_tail_when_not_empty(self):
+        """Test inserting a player node when list is not empty"""
+        self.player_list.insert_at_head(Player("123", "Ten"))
 
 if __name__ == '__main__':
     """main function"""
