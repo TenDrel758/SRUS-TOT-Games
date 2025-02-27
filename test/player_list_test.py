@@ -1,9 +1,10 @@
+# test.player_list_test.py
 import unittest
 from app.player_list import PlayerList
 from app.player import Player
 
 class TestPlayerList(unittest.TestCase):
-    """testing the PlayerList class"""
+    """Testing the PlayerList class"""
 
     def setUp(self):
         """Set up PlayerList instance for testing"""
@@ -23,6 +24,11 @@ class TestPlayerList(unittest.TestCase):
     def test_insert_at_head_when_empty(self):
         """Test inserting a player node when list is empty"""
         self.player_list.insert_at_head(Player("123", "Ten"))
+
+    def test_insert_at_tail(self):
+        """Test inserting a player node at the tail of the list"""
+        player = Player("123", "Ten")
+        self.player_list.insert_at_tail(player)
 
 if __name__ == '__main__':
     """main function"""
