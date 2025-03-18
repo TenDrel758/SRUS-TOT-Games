@@ -1,4 +1,18 @@
-# test.player_list_test.py
+"""
+Player List Test.
+    Author: Tendrel Ongmo Tshering
+    Student ID: 20149664
+    Description: A test for PlayerList class.
+    Date: 2025-02-28
+    File: player_list_test.py
+    Refrences: https://www.geeksforgeeks.org/doubly-linked-list-set-2-insert-in-between/
+               https://www.youtube.com/watch?v=0BTZB5DU2OE&t=0s
+               https://www.youtube.com/watch?v=w-fnG4LIU_0&t=0s
+               https://www.youtube.com/watch?v=galDq38nlWg&t=0s
+               https://www.youtube.com/watch?v=LrCAokPC12g&t=0s
+"""
+
+# test/player_list_test.py
 import io
 import unittest
 

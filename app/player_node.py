@@ -1,3 +1,13 @@
+"""
+Player Node class.
+    Author: Tendrel Ongmo Tshering
+    Student ID: 20149664
+    Description: A class to represent a node in a doubly linked list of players.
+    Date: 2025-02-28
+    File: player_node.py
+"""
+
+#app/player_node.py
 class PlayerNode:
     """A node for a double linked list holding player instances."""
 
@@ -35,7 +45,7 @@ class PlayerNode:
     @property
     def key(self):
         """Return player uid as key"""
-        return self.__player.uid        #assume player has uid property
+        return self.__player.uid
 
     @property
     def __str__(self):
@@ -45,5 +55,3 @@ class PlayerNode:
     @player.setter
     def player(self, value):
         self.player = value
-
-#draft needs more work?

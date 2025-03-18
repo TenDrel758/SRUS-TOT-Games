@@ -1,3 +1,13 @@
+"""
+Player class.
+    Author: Tendrel Ongmo Tshering
+    Student ID: 20149664
+    Description: A class to represent a player.
+    Date: 2025-02-28
+    File: player.py
+"""
+
+#app/player.py
 class Player:
     """A class to represent a player."""
 
@@ -16,7 +26,11 @@ class Player:
         """Return the name of the player."""
         return self.__name
 
+    def __hash__(self):
+        return hash(self.uid)
+
     def __str__(self) -> str:
         """Return a string representation of the player."""
         return f"Player(ID: {self.uid}, Name: {self.name})"
+
 
